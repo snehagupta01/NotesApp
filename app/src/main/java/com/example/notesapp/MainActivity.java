@@ -13,7 +13,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> notes=new ArrayList<String>();
+
+    static ArrayList<String> notes=new ArrayList<String>();
+    static ArrayAdapter arrayAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView=(ListView)findViewById(R.id.listview);
         notes.add("Hey there !");
 
-        ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,notes);
+        arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,notes);
 
         listView.setAdapter(arrayAdapter);
 
