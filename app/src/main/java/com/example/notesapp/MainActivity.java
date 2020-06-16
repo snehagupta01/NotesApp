@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(arrayAdapter);
 
-       
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getApplicationContext(),NoteEditorActivity.class);
+                intent.putExtra("noteid",position);
+                startActivity(intent);
+            }
+        });
     }
 }
